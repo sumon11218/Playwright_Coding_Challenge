@@ -7,9 +7,7 @@
   
   "scripts": {
     "showReport": "npx playwright show-report",
-    "transformersTest": "npx playwright test /tests/Transformers.spec.ts --headed --workers=1 --project=chromium --reporter=html",
-    "appleMusicTest": "npx playwright test /tests/AppleMusic.spec.ts --headed --workers=1 --project=edge --reporter=html",
-    "xboxTest": "npx playwright test /tests/MS_Xbox_Test.spec.ts --headed --workers=1 --project=edge --reporter=html",
+    "checkersGameTest": "npx playwright test /tests/CheckerGameTest.spec.ts --headed --workers=1 --project=chrome --reporter=html"
   },
   "repository": {
     "type": "git",

@@ -63,7 +63,7 @@ test.describe.serial("Deck of Cards API Test Scenarios", () => {
       var player2Card1 = await deckOfCardsApi.setTheNumbersToDeck(cardValue4)
       let player2Card2 = await deckOfCardsApi.setTheNumbersToDeck(cardValue5)
       let player2Card3 = await deckOfCardsApi.setTheNumbersToDeck(cardValue6)
-      // verify if player 1 has black jack
+      // verify if player 2 has black jack
       deckOfCardsApi.verifyPlayerHasBlackJack("Player 2",player2Card1,player2Card2,player2Card3)
     })//end of test 2
 

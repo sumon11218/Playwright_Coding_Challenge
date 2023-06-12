@@ -24,8 +24,8 @@ export class DeckOfCardsApi {
       let totalCount = (count1 + count2 + count3)         
       if(totalCount == 21){
          console.log(player + " has blackjack")
-      } else if(totalCount == 30 && count1 == 11 || count2 == 11 || count3 == 11) {
-         console.log(player + " has blackjack. Settingng the Ace to 1")
+      } else if(totalCount == 31 && count1 == 11 || count2 == 11 || count3 == 11) {
+         console.log(player + " has blackjack. Setting the Ace to 1")
       } else if (totalCount > 21 || totalCount < 21) {
       console.log(player + " doesn't have blackjack")
       }

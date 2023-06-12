@@ -34,7 +34,7 @@ test.describe.serial("Deck of Cards API Test Scenarios", () => {
       console.log("Deck ID: " + deckId)
     })//end of test 1
 
-    test('Draw 3 cards each for player and verify either of the player has blackjack', async () => {
+    test('Draw 3 cards for each player and verify either of the player has blackjack', async () => {
       const response = await context.get('https://deckofcardsapi.com/api/deck/'+deckId+'/draw/?count=6', {
         headers: {
         "Content-Type": "application/json",

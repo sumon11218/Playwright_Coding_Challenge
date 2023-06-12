@@ -8,7 +8,7 @@
   "scripts": {
     "showReport": "npx playwright show-report",
     "checkersGameTest": "npx playwright test /tests/CheckerGameTest.spec.ts --headed --workers=1 --project=chrome --reporter=html",
-    "deckOfCardsApiTest": "npx playwright test /tests/DeckOfCardsAPITest.spec.ts --headed --workers=1 --project=chrome --reporter=html",
+    "deckOfCardsApiTest": "npx playwright test /tests/DeckOfCardsAPITest.spec.ts --workers=1 --project=chrome --reporter=html",
     "runAllTests": "npx playwright test --headed --workers=1 --project=chrome --reporter=html"
 
   },

@@ -11,19 +11,18 @@ test.describe.serial("Deck of Cards API Test Scenarios", () => {
     let deckOfCardsApi = new DeckOfCardsApi(page); //setting instances for page object 
     let deckId: any
 
-
     test.beforeAll(async ({browser}) =>{
-        //Create a new Page instance
-        page = await browser.newPage(); 
-        context = await request.newContext();
-        await page.goto('https://deckofcardsapi.com/')
-        //verify page is up by matching the header title
-        expect(await page.locator('xpath=//*[@class="title"]')).toHaveText('Deck of Cards')
-        console.log("Header Title Appears: 'Deck of Cards'")
+      //Create a new Page instance
+      page = await browser.newPage(); 
+      context = await request.newContext();
+      await page.goto('https://deckofcardsapi.com/')
+      //verify page is up by matching the header title
+      expect(await page.locator('xpath=//*[@class="title"]')).toHaveText('Deck of Cards')
+      console.log("Header Title Appears: 'Deck of Cards'")
     })//end of before all
 
     test('Get a new deck & Shuffle it', async () => {
-        const response = await context.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1', {
+      const response = await context.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1', {
         headers: {
         "Content-Type": "application/json",
         "Cache-Control": "no-cache"
@@ -32,13 +31,11 @@ test.describe.serial("Deck of Cards API Test Scenarios", () => {
       expect(response.status()).toBe(200)
       const body = await response.json();
       deckId = JSON.stringify(body.deck_id).replace(/['"]+/g, '')
-
       console.log("Deck ID: " + deckId)
-
     })//end of test 1
 
     test('Draw 3 cards each for player and verify either of the player has blackjack', async () => {
-        const response = await context.get('https://deckofcardsapi.com/api/deck/'+deckId+'/draw/?count=6', {
+      const response = await context.get('https://deckofcardsapi.com/api/deck/'+deckId+'/draw/?count=6', {
         headers: {
         "Content-Type": "application/json",
         "Cache-Control": "no-cache"
